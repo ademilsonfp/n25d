@@ -1,0 +1,20 @@
+[
+
+  "src/array.js",
+  "src/math.js",
+  "src/object.js",
+  "src/dom.js",
+  "src/canvas.js",
+
+  "src/direction.js",
+  "src/point.js",
+  "src/camera.js",
+
+  "src/math.h.js",
+  "src/dom.h.js",
+  "src/canvas.h.js",
+
+  "src/direction.h.js",
+  "src/point.h.js",
+  "src/camera.h.js"
+]
