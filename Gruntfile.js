@@ -11,6 +11,31 @@ module.exports = exports = function(grunt) {
         files: {
           'api/api.js': require('./src')
         }
+      },
+
+      dev: {
+        options: {
+          enclose: {},
+          mangle: true,
+          compress: true,
+          sourceMap: true
+        },
+
+        files: {
+          'n25d.dev.js': require('./src')
+        }
+      },
+
+      dist: {
+        options: {
+          enclose: {},
+          mangle: true,
+          compress: true
+        },
+
+        files: {
+          'n25d.js': require('./src')
+        }
       }
     }
   });
