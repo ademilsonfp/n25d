@@ -1,8 +1,5 @@
 
-var canvas_proto = proto(HTMLCanvasElement),
-    canvas_ctx_proto = proto(CanvasRenderingContext2D),
-
-    canvas_fill_style = obj_prop('fillStyle'),
+var canvas_fill_style = obj_prop('fillStyle'),
     canvas_line_width = obj_prop('lineWidth'),
     canvas_stroke_style = obj_prop('strokeStyle'),
 

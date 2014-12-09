@@ -1,8 +1,5 @@
 
-var proto = obj_prop('prototype'),
-
-    obj2str = obj_fn('toString'),
-    obj_apply = obj_fn('apply'),
+var obj2str = obj_fn('toString'),
 
     obj_width = obj_prop('width'),
     obj_height = obj_prop('height'),
