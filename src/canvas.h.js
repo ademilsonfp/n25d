@@ -1,5 +1,8 @@
 
-var canvas_fill_style = obj_prop('fillStyle'),
+var canvas_proto = proto(HTMLCanvasElement),
+    canvas_ctx_proto = proto(CanvasRenderingContext2D),
+
+    canvas_fill_style = obj_prop('fillStyle'),
     canvas_line_width = obj_prop('lineWidth'),
     canvas_stroke_style = obj_prop('strokeStyle'),
 
@@ -12,4 +15,5 @@ var canvas_fill_style = obj_prop('fillStyle'),
     canvas_move_to = canvas_ctx_fn('moveTo'),
     canvas_line_to = canvas_ctx_fn('lineTo'),
     canvas_fill = canvas_ctx_fn('fill'),
-    canvas_stroke = canvas_ctx_fn('stroke');
+    canvas_stroke = canvas_ctx_fn('stroke'),
+    canvas_clear_rect = canvas_ctx_fn('clearRect');

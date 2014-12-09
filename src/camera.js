@@ -29,7 +29,12 @@ function cam_set_scale(cam, scale) {
   cam_update_axsiz(cam);
 }
 
-function cam_canvas2world(cam, p) {
+function cam_canvas2world(cam, p, el) {
+  if (2 < len(arguments)) {
+    var bounds = dom_el_bounds(el);
+    p = point_sub(p, point(obj_left(bounds), obj_top(bounds)));
+  }
+
   var px = point_x(p),
       py = point_y(p),
       cp = cam_pos(cam),
@@ -40,9 +45,10 @@ function cam_canvas2world(cam, p) {
       asx = point_x(as),
       asy = point_y(as),
       asz = point_z(as);
+
   return point(
     (px + asx * cpx) / asx,
-    (py + asy * cpy - asz * cpz) / asy,
+    (py + asy * cpy) / asy,
     cpz
   );
 }

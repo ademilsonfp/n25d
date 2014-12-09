@@ -1,4 +1,5 @@
-var PI = math_attr('PI'),
+var isnan = isNaN,
+    PI = math_attr('PI'),
     floor = math_fn('floor'),
     ceil = math_fn('ceil'),
     round = math_fn('round'),

@@ -36,6 +36,19 @@ module.exports = exports = function(grunt) {
         files: {
           'n25d.js': require('./src')
         }
+      },
+
+      play_dist: {
+        options: {
+          enclose: {},
+          mangle: true,
+          compress: true
+        },
+
+        files: {
+          'api/play.min.js': require('./src')
+              .concat(['api/play.js'])
+        }
       }
     }
   });

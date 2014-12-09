@@ -1,4 +1,5 @@
 [
+  "src/function.js",
   "src/array.js",
   "src/math.js",
   "src/object.js",
@@ -9,7 +10,10 @@
   "src/point.js",
   "src/camera.js",
 
+  "src/function.h.js",
+  "src/array.h.js",
   "src/math.h.js",
+  "src/object.h.js",
   "src/dom.h.js",
   "src/canvas.h.js",
 

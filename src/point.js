@@ -1,11 +1,12 @@
 
 function point() {
   var new_p = {},
-      p = (1 === arguments.length && 'object' === typeof arguments[0])
-          ? arguments[0] : arguments;
-  new_p[POINT_X] = (0 < p.length && !isNaN(p[0])) ? p[0] : 0;
-  new_p[POINT_Y] = (1 < p.length && !isNaN(p[1])) ? p[1] : 0;
-  new_p[POINT_Z] = (2 < p.length && !isNaN(p[2])) ? p[2] : 0;
+      p = (1 === len(arguments) && 'object' === typeof arguments[0])
+          ? arguments[0] : arguments,
+      plen = len(p);
+  new_p[POINT_X] = (0 < plen && !isnan(p[0])) ? p[0] : 0;
+  new_p[POINT_Y] = (1 < plen && !isnan(p[1])) ? p[1] : 0;
+  new_p[POINT_Z] = (2 < plen && !isnan(p[2])) ? p[2] : 0;
   return new_p;
 }
 

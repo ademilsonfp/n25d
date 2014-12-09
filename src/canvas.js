@@ -1,7 +1,7 @@
 
 function canvas_fn(name) {
   return function(el) {
-    return HTMLCanvasElement.prototype[name].apply(el, slice(arguments, 1));
+    return canvas_proto[name].apply(el, slice(arguments, 1));
   };
 }
 
@@ -11,6 +11,6 @@ function canvas_ctx(canvas) {
 
 function canvas_ctx_fn(name) {
   return function(ctx) {
-    return CanvasRenderingContext2D.prototype[name].apply(ctx, slice(arguments, 1));
+    return canvas_ctx_proto[name].apply(ctx, slice(arguments, 1));
   };
 }
