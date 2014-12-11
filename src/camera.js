@@ -3,8 +3,8 @@ function cam() {
   var new_cam = {};
 
   cam_pos(new_cam, point());
-  cam_scale(new_cam, 1);
-  cam_rsu(new_cam, 60);
+  cam_scale(new_cam, CAM_DEFAULT_SCALE);
+  cam_rsu(new_cam, CAM_DEFAULT_RSU);
   cam_update_axsiz(new_cam);
 
   return new_cam;
@@ -37,10 +37,12 @@ function cam_canvas2world(cam, p, el) {
 
   var px = point_x(p),
       py = point_y(p),
+
       cp = cam_pos(cam),
       cpx = point_x(cp),
       cpy = point_y(cp),
       cpz = point_z(cp),
+
       as = cam_axsiz(cam),
       asx = point_x(as),
       asy = point_y(as),
@@ -57,17 +59,32 @@ function cam_world2canvas(cam, p) {
   var px = point_x(p),
       py = point_y(p),
       pz = point_z(p),
+
       cp = cam_pos(cam),
       cpx = point_x(cp),
       cpy = point_y(cp),
       cpz = point_z(cp),
+
       as = cam_axsiz(cam),
       asx = point_x(as),
       asy = point_y(as),
       asz = point_z(as);
+
   return point(
     asx * px - asx * cpx,
     asy * py - asy * cpy - asz * pz + asz * cpz
+  );
+}
+
+function cam_spr2world(p) {
+  var px = point_x(p),
+      py = point_y(p),
+      pz = point_z(p);
+
+  return point(
+    px - py,
+    px + py,
+    pz
   );
 }
 

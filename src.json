@@ -1,4 +1,4 @@
-[  
+[
   "src/array.js",
   "src/math.js",
   "src/object.js",
@@ -6,6 +6,7 @@
   "src/canvas.js",
   "src/point.js",
   "src/camera.js",
+  "src/sprite.js",
 
   "src/prototype.h.js",
   "src/array.h.js",
@@ -14,5 +15,6 @@
   "src/dom.h.js",
   "src/canvas.h.js",
   "src/point.h.js",
-  "src/camera.h.js"
+  "src/camera.h.js",
+  "src/sprite.h.js"
 ]

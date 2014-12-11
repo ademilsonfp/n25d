@@ -10,3 +10,7 @@ function math_fn(name) {
 function rad(angle) {
   return angle * PI / 180;
 }
+
+function lines_collide(as, ae, bs, be) {
+  return (as >= bs && as <= be) || (ae >= bs && ae <= be);
+}

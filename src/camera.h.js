@@ -1,4 +1,6 @@
-var CAM_RSU_ANGLE = rad(30),
+var CAM_DEFAULT_SCALE = 1,
+    CAM_DEFAULT_RSU = 60,
+    CAM_RSU_ANGLE = rad(30),
     CAM_RSU_SIN = sin(CAM_RSU_ANGLE),
     CAM_RSU_COS = cos(CAM_RSU_ANGLE),
 

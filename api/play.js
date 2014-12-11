@@ -99,33 +99,85 @@ function purple_cube(p) {
   draw_cube(p, 'purple');
 }
 
+function draw_sprect(p, w, h, stroke_style, line_width) {
+  var c = cam_world2canvas.bind(null, play_cam),
+      p1 = c(p),
+      p2 = c(point_sum(p, cam_spr2world(point(w, 0)))),
+      p3 = c(point_sum(p, cam_spr2world(point(w, h)))),
+      p4 = c(point_sum(p, cam_spr2world(point(0, h))));
+
+  canvas_save(play);
+  canvas_stroke_style(play, stroke_style || 0);
+  canvas_line_width(play, line_width || 1);
+
+  canvas_begin_path(play);
+  canvas_move_to(play, point_x(p1), point_y(p1));
+  canvas_line_to(play, point_x(p2), point_y(p2));
+  canvas_line_to(play, point_x(p3), point_y(p3));
+  canvas_line_to(play, point_x(p4), point_y(p4));
+  canvas_close_path(play);
+  canvas_stroke(play);
+
+  canvas_restore(play);
+}
+
+function red_sprect(p, w, h) {
+  draw_sprect(p, w, h, 'red');
+}
+
+function green_sprect(p, w, h) {
+  draw_sprect(p, w, h, 'green');
+}
+
+function blue_sprect(p, w, h) {
+  draw_sprect(p, w, h, 'blue');
+}
+
+function yellow_sprect(p, w, h) {
+  draw_sprect(p, w, h, 'yellow');
+}
+
+function magenta_sprect(p, w, h) {
+  draw_sprect(p, w, h, 'magenta');
+}
+
+function purple_sprect(p, w, h) {
+  draw_sprect(p, w, h, 'purple');
+}
+
 (function() {
   var x, y, width, height, p;
+
+  function render() {
+    canvas_clear_rect(play, 0, 0, width, height);
+
+    if (!isnan(x) && !isnan(y)) {
+      var p2, p3, p4, p5;
+
+      //p2 = point_sum(p, point(0, 0, 0));
+      p3 = point_sum(p, point(1, 1, 0));
+      p4 = point_sum(p, point(0, 2, 0));
+      p5 = point_sum(p, point(1, 3, 0));
+
+      yellow_cube(p);
+      //blue_cube(p2);
+      magenta_cube(p3);
+      green_cube(p4);
+      purple_cube(p5);
+    }
+
+    red_sprect(point(2, 1, 0), 4, 2);
+  }
 
   dom_el_on(window, 'mousemove', function(event) {
     x = obj_clientx(event),
     y = obj_clienty(event),
-    width = obj_width(play_canvas),
-    height = obj_height(play_canvas),
     p = cam_canvas2world(play_cam, point(x, y), play_canvas);
   });
 
-  setInterval(function() {
-    if (isnan(x) || isnan(y) || isnan(width) || isnan(height))
-      return;
+  width = obj_width(play_canvas),
+  height = obj_height(play_canvas);
 
-    var p2, p3, p4, p5;
-
-    //p2 = point_sum(p, point(-1, -1, 0));
-    //p3 = point_sum(p, point(1, 1, 0));
-    p4 = point_sum(p, point(0, 0, 1));
-    p5 = point_sum(p, point(0, 0, -1));
-
-    canvas_clear_rect(play, 0, 0, width, height);
-    yellow_cube(p);
-    //blue_cube(p2);
-    //magenta_cube(p3);
-    green_cube(p4);
-    purple_cube(p5);
-  }, 30);
+  setInterval(render, 30);
+  render();
 })();
