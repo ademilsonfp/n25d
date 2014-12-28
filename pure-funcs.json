@@ -1,0 +1,36 @@
+[
+  "obj_descriptor",
+  "obj_prop",
+  "obj_fn",
+  "proto",
+
+  "arr_fn",
+
+  "math_fn",
+  "math_attr",
+
+  "floor",
+  "ceil",
+  "round",
+  "random",
+  "sin",
+  "cos",
+  "atan2",
+  "min",
+  "max",
+  "rad",
+
+  "canvas_fn",
+  "canvas_ctx_fn",
+
+  "dom_fn",
+  "dom_el_fn",
+  "dom_ev_fn",
+  "dom_ev_onlistener",
+  "dom_ev_offlistener",
+  "dom_ev_trigger",
+
+  "brick_new_prop",
+  "cam_new_prop",
+  "point_new_prop"
+]

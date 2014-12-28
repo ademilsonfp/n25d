@@ -6,4 +6,6 @@ var isnan = isNaN,
     random = math_fn('random'),
     sin = math_fn('sin'),
     cos = math_fn('cos'),
-    atan2 = math_fn('atan2');
+    atan2 = math_fn('atan2'),
+    min = math_fn('min'),
+    max = math_fn('max');

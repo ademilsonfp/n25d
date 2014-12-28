@@ -146,7 +146,9 @@ function purple_sprect(p, w, h) {
 }
 
 (function() {
-  var x, y, width, height, p;
+  var x, y, p,
+      width = obj_width(play_canvas),
+      height = obj_height(play_canvas);
 
   function render() {
     canvas_clear_rect(play, 0, 0, width, height);
@@ -166,17 +168,16 @@ function purple_sprect(p, w, h) {
       purple_cube(p5);
     }
 
-    red_sprect(point(2, 1, 0), 4, 2);
+    blue_sprect(point(2, 1, 0), 4, 3);
   }
 
-  dom_el_on(window, 'mousemove', function(event) {
+  function update_pointer(event) {
     x = obj_clientx(event),
     y = obj_clienty(event),
     p = cam_canvas2world(play_cam, point(x, y), play_canvas);
-  });
+  }
 
-  width = obj_width(play_canvas),
-  height = obj_height(play_canvas);
+  dom_el_onmousemove(window, update_pointer);
 
   setInterval(render, 30);
   render();
