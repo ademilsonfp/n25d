@@ -1,6 +1,8 @@
 
 /node_modules
-/api/api.js*
-/api/*.min.js
+/play-api/api.js*
+/play-api/*.min.js
+/play-api/*.js.map
 /n25d.js*
 /n25d.*.js*
+
